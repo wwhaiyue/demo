@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定元素</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+     <div id="app">
+         <span v-bind:title="message">鼠标停留几秒后看到信息</span><!--v-bind绑定数据，title内容为message-->
+     </div>
+     <script>
+         var app = new  Vue({
+             el:"#app",
+             data:{
+                 message:"页面加载于" + new Date().toLocaleString() /*toLocaleString() 方法可根据本地时间把 Date 对象转换为字符串，并返回结果。*/
+             }
+         })
+     </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>声明式渲染</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+     <div id="app">
+         {{message}}  <!--渲染数据-->
+     </div>
+     <script>
+         var app = new Vue({
+             el:"#app",
+             data:{
+                 message:"WANGHAIYUE"
+             }
+         })
+     </script>
+</body>
+</html>

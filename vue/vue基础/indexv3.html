@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>条件与循环</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app">
+<span v-if="see">你能看见我</span>
+</div>
+<div id="appp">
+    <ul>
+        <li v-for="todo in todos"> <!--值，健名，索引-->
+            {{todo.text}}
+        </li>
+    </ul>
+</div>
+<script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            see:true
+        }
+    })
+    var appp= new Vue({
+        el:"#appp",
+        data:{
+            todos:[
+                {text:"学习vue"},
+                {text:"从基础开始"},
+                {text:"是的"}
+            ]
+        }
+    })
+</script>
+</body>
+</html>

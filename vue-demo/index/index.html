@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  　<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<input type="hidden" value="2015" id="inputid">
+
+
+
+
+<div id="app">
+  {{message}}
+
+  <button @click="aaa">button</button>
+
+  <ul class="ul" v-for="item in items" @click="aaa($event)">
+    <li class="li">{{item.message}}</li>
+  </ul>
+
+</div>
+
+<script>
+
+  /*$(".ul").on("click",".li",function () {
+//    console.log($(this).data("aa"))
+
+    var aa = $(this).data("aa");
+    var id = $("#inputid").val();
+
+    var data = {nameid : id,namecound : aa};
+    $.ajax({
+      type : "get",
+      url : " ",
+      data : data,
+      success:function(data){
+         if(data.code == 200){
+
+         }
+         else{
+
+         }
+      }
+    })
+  })*/
+
+//  $(".li")
+
+
+
+  var app = new Vue({
+    el: '#app',
+    data : {
+      message: 1,
+      items: [
+        { message: 1 },
+        { message: 2 },
+        { message: 3 }
+      ]
+    },
+    methods : {
+      aaa : function (event) {
+        console.log(event)
+        console.log(event.toElement.className)
+      }
+    },
+
+    beforeCreate : function () {
+//      页面 loading 事件
+    },
+    created : function () {
+//     取消 页面 loading 事件
+    },
+    mounted : function(){
+//      页面自启动，调用 后台 数据，并渲染到页面上
+    }
+  })
+
+
+
+
+
+</script>
+</body>
+</html>
